@@ -14,7 +14,7 @@ function FileUpload() {
     const formData = new FormData();
     formData.append('image', selectedFile, selectedFile.name);
 
-    axios.post('/api/upload', formData, {
+    axios.post('http://localhost:8000/upload', formData, {
       onUploadProgress: progressEvent => {
         setUploadProgress(Math.round((progressEvent.loaded / progressEvent.total) * 100));
       }
