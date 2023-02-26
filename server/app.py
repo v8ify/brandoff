@@ -35,6 +35,8 @@ async def create_upload_file(image: UploadFile):
     # write this image to a folder
     with open(file_path, "wb") as image_file:
         image_file.write(await image.read())
-        # process the uploaded file
-        return {"filename": unique_file_name}
+    
+    blurred_image_path = get_blurred_image_path(file_path, file_extension)
+
+    return FileResponse(blurred_image_path, content_disposition_type="attachment", media_type="application/octet-stream", filename=unique_file_name)
 

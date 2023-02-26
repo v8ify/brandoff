@@ -3,9 +3,10 @@ import cv2
 import pandas as pd
 import numpy as np
 import uuid
+import os
 
 def get_blurred_image_path(original_image: str, extension: str):
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path = './yolov5_logo.pt')
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path = './yolov5_v2.pt')
 
     results = model(original_image)
 
@@ -33,7 +34,7 @@ def get_blurred_image_path(original_image: str, extension: str):
 
         final_image = cv2.bitwise_and(blurred_image, mask) + cv2.bitwise_and(image, mask_inverse)
 
-        temp_result_location = "./temp/" + str(uuid.uuid4()) + "." + extension
+        temp_result_location = os.path.join("uploaded_images", str(uuid.uuid4()) + extension)
 
         cv2.imwrite(temp_result_location, final_image)
 

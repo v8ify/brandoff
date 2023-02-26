@@ -17,10 +17,16 @@ function FileUpload() {
     axios.post('http://localhost:8000/upload', formData, {
       onUploadProgress: progressEvent => {
         setUploadProgress(Math.round((progressEvent.loaded / progressEvent.total) * 100));
-      }
+      },
+      responseType: "blob"
     })
     .then(response => {
-      console.log(response.data);
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'blur_result.jpg');
+      document.body.appendChild(link);
+      link.click();
     })
     .catch(error => {
       console.log(error);
