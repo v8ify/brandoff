@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <div className='App-logo'>BrandOff 1.0</div>
       <header className="App-header">
         <FileUpload />
         <p>
