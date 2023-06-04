@@ -6,7 +6,7 @@ Note: This project uses git large file storage to upload trained models and othe
 
 ## Steps to run the back-end
 1. Change the current directory to the `server` folder
-2. (Only for the first time) Create a new python virtual environment (if already not created) [Steps]([url](https://docs.python.org/3/library/venv.html))
+2. (Only for the first time) Create a new python virtual environment [Steps](https://docs.python.org/3/library/venv.html)
 3. Activate the virtual environment
 4. (Only for the first time)Install all the dependencies using
   ```pip install -r requirements.txt```
