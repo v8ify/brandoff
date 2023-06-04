@@ -13,7 +13,7 @@ Note: This project uses git large file storage to upload trained models and othe
 5. Start the server using ```uvicorn app:app --reload```
 6. Your back-end should be ready to receive requests now.
 
-## Steps to the front-end
+## Steps to run the front-end
 1. Make sure you have the latest version of NodeJS installed
 2. Change the current directory to `client` folder.
 3. (Only for the first time) Install all the npm dependencies using ```npm install```
