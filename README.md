@@ -11,7 +11,7 @@ Note: This project uses git large file storage to upload trained models and othe
 4. (Only for the first time)Install all the dependencies using
   ```pip install -r requirements.txt```
 5. Start the server using ```uvicorn app:app --reload```
-6. Your back-end should be ready to receive requests now.
+6. It should display the host address & port number on the command line. The back-end is ready to receive requests now.
 
 ## Steps to run the front-end
 1. Make sure you have the latest version of NodeJS installed
